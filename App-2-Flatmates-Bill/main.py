@@ -4,3 +4,14 @@ class Bill:
          self.amount = amount
          self.period = period
 
+class Flatmate:
+    """flatmate"""
+    def __init__(self, name, days_in_house):
+        self.name = name
+        self.days_in_house = days_in_house
+
+    def pays(self):
+        pass
+
+
+
