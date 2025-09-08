@@ -14,4 +14,9 @@ class Flatmate:
         pass
 
 
+class PdfReport:
+    def __init__(self, filename):
+        self.filename = filename
 
+    def generate_pdf(self):
+        pass
