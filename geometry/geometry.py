@@ -1,3 +1,4 @@
+import math
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -8,5 +9,11 @@ class Point:
             return True
         else:
             return False
+    def distance(self, point):
+        d = math.sqrt( ((point.x - self.x)**2) + ((point.y - self.y)**2))
+        return d
+
 p1 = Point(5,5)
+p2 = Point(10,10)
 print(p1.falls_in_rectangle((2,2), (10,10)))
+print(p1.distance(p2))
