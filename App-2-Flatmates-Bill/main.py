@@ -1,22 +1,5 @@
 from fpdf import FPDF
-class Bill:
-    """Object that contains data about bill. like period and amount"""
-    def __init__(self, amount, period):
-         self.amount = amount
-         self.period = period
-
-class Flatmate:
-    """flatmate"""
-    total_days = 0
-    def __init__(self, name, days_in_house):
-        self.name = name
-        self.days_in_house = days_in_house
-        Flatmate.total_days = Flatmate.total_days + days_in_house
-
-    def pays(self, bill):
-        return (bill.amount/Flatmate.total_days) * self.days_in_house
-
-
+from flat import Bill, Flatmate
 class PdfReport:
     def __init__(self, filename):
         self.filename = filename
@@ -45,4 +28,4 @@ fm1 = Flatmate(name=input("Enter Flatmate 1 name : "), days_in_house=int(input("
 fm2 = Flatmate(name=input("Enter Flatmate 2 name : "), days_in_house=int(input("His days in flat : ")))
 report = PdfReport("flatmate_billing_report.pdf")
 report.generate_pdf(fm1, fm2, bill)
-printf("Billing Report PDF Generated")
+print("Billing Report PDF Generated")
