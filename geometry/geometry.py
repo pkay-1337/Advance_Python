@@ -36,13 +36,14 @@ class GuiRectangle(Rectangle):
 
 
 print("Guess a point which lies in this Rectangle : ")
-r = GuiRectangle(Point(r(0,9),r(0,9)), Point(r(10,400),r(10,400)))
+r = GuiRectangle(Point(r(0,400),r(0,400)), Point(r(10,400),r(10,400)))
 print("Rectangle Coordinates : ", r.point1.x, r.point1.y, "and", r.point2.x, r.point2.y)
 
 up = Point(float(input("Guess X : ")), float(input("Guess Y : ")))
-
+res = 0
 if up.falls_in_rectangle(r):
     print("You are right")
+    res = 1
 else:
     print("You are wrong")
 
@@ -51,6 +52,8 @@ r.draw(canvas)
 canvas.penup()
 canvas.goto(up.x, up.y)
 canvas.pendown()
+canvas.dot(10, 'green' if res else 'red') 
+
 turtle.done()
 
 
