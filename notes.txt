@@ -1,0 +1,5 @@
+2,3,"hello", function definitions are all objects.
+Objects have type.
+5 basically means int(5)
+
+object.__file__ -> definition file path
